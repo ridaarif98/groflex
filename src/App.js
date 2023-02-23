@@ -1,17 +1,17 @@
-import AdminNotifications from "./AdminNotifications";
-import Header  from "./Header";
+import { Route, Routes } from 'react-router-dom';
+import AdminNotifications from './pages/AdminNotifications';
+import AccountPreference from './pages/AccountPreferences';
+import Navbar from './pages/Navbar';
 
 function App() {
   return (
-    <div className="page-content-wrapper">
-      <div className="page-content is-relative">
-        <Header />
-        <div className="page-content-inner">
-        <AdminNotifications />
-        </div>
-      </div>
-
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/AdminNotifications" element={<AdminNotifications />} />
+        <Route path="/AccountPreference" element={<AccountPreference />} />
+      </Routes>
+    </>
   );
 }
 
