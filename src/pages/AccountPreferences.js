@@ -3,6 +3,7 @@ import { Input } from '../components/input/Input';
 import { Button } from '../components/button/Button';
 import { TextArea } from '../components/textarea/TextArea';
 import { AdvancedCard } from '../components/cards/AdvancedCard';
+import { Switch } from '../components/switch/Switch';
 
 function ChangePassword() {
   return (
@@ -128,7 +129,15 @@ function NotificationsPreference() {
   return (
     <div className="column is-5">
       <AdvancedCard type={'s-card'}>
-        <h3 className="title is-4 is-bold">Your Notifications</h3>
+        <div className="columns is-multiline">
+          <div className="column is-8">
+            <h3 className="title is-4 is-bold">Your Notifications</h3>
+            <p>Recieve your notifications</p>
+          </div>
+          <div className="column is-4 m-t-35">
+            <Switch isSuccess checked={true}></Switch>
+          </div>
+        </div>
       </AdvancedCard>
       <div className="m-t-15" />
       <form>
@@ -156,7 +165,6 @@ function NotificationsPreference() {
                     className="input"
                     name="sender-name"
                     placeholder="username@gmail.com"
-                    value={'Groflex Solutions'}
                     required
                   />
                 </div>
@@ -171,7 +179,6 @@ function NotificationsPreference() {
                     className="input"
                     name="email"
                     placeholder="groflex@gmail.com"
-                    value={'Groflex@gmail.com'}
                     required
                   />
                 </div>
