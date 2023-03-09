@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Input } from '../components/input/Input';
 import { Button } from '../components/button/Button';
 import { TextArea } from '../components/textarea/TextArea';
@@ -6,6 +6,9 @@ import { AdvancedCard } from '../components/cards/AdvancedCard';
 import { Switch } from '../components/switch/Switch';
 
 function ChangePassword() {
+  const [emailValue, setEmailValue] = useState('');
+  const [currentPassword, setCurrentPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
   return (
     <form>
       <AdvancedCard
@@ -23,6 +26,8 @@ function ChangePassword() {
                   placeholder={'Enter email'}
                   type={'email'}
                   name={'email'}
+                  value={emailValue}
+                  onChange={(e) => setEmailValue(e.target.value)}
                 />
               </div>
             </div>
@@ -34,6 +39,8 @@ function ChangePassword() {
                   type={'password'}
                   placeholder={'Enter Password'}
                   name={'password'}
+                  value={currentPassword}
+                  onChange={(e) => setCurrentPassword(e.target.value)}
                 />
               </div>
             </div>
@@ -48,6 +55,8 @@ function ChangePassword() {
                     className="input"
                     name="password"
                     placeholder="Enter Password"
+                    value={newPassword}
+                    onChange={(e) => setNewPassword(e.target.value)}
                     required
                   />
                 </div>
@@ -61,6 +70,9 @@ function ChangePassword() {
 }
 
 function DeleteAccount() {
+  const [emailValue, setEmailValue] = useState('');
+  const [currentPassword, setCurrentPassword] = useState('');
+  const [reasonText, setReasonText] = useState('');
   return (
     <form className="m-t-20">
       <AdvancedCard
@@ -81,6 +93,8 @@ function DeleteAccount() {
                   placeholder={'Enter email'}
                   type={'email'}
                   name={'email'}
+                  value={emailValue}
+                  onChange={(e) => setEmailValue(e.target.value)}
                 />
               </div>
             </div>
@@ -92,6 +106,8 @@ function DeleteAccount() {
                   type={'password'}
                   placeholder={'Enter Password'}
                   name={'password'}
+                  value={currentPassword}
+                  onChange={(e) => setCurrentPassword(e.target.value)}
                 />
               </div>
             </div>
@@ -103,9 +119,12 @@ function DeleteAccount() {
                 <div class="control">
                   <TextArea
                     rows={3}
+                    name={'reason'}
                     placeholder={
                       'Enter reason to delete account (Your feedback will help us make groflex even better)'
                     }
+                    value={reasonText}
+                    onChange={(e) => setReasonText(e.target.value)}
                   />
                 </div>
               </div>
@@ -126,6 +145,8 @@ function DeleteAccount() {
 }
 
 function NotificationsPreference() {
+  const [senderName, setSenderName] = useState('');
+  const [senderEmail, setSenderEmail] = useState('');
   return (
     <div className="column is-5">
       <AdvancedCard type={'s-card'}>
@@ -164,7 +185,9 @@ function NotificationsPreference() {
                     type={'text'}
                     className="input"
                     name="sender-name"
-                    placeholder="username@gmail.com"
+                    placeholder="Groflex"
+                    value={senderName}
+                    onChange={(e) => setSenderName(e.target.value)}
                     required
                   />
                 </div>
@@ -179,6 +202,8 @@ function NotificationsPreference() {
                     className="input"
                     name="email"
                     placeholder="groflex@gmail.com"
+                    value={senderEmail}
+                    onChange={(e) => setSenderEmail(e.target.value)}
                     required
                   />
                 </div>
