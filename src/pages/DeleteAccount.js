@@ -3,8 +3,6 @@ import { Input } from '../components/input/Input';
 import { Button } from '../components/button/Button';
 import { TextArea } from '../components/textarea/TextArea';
 import { AdvancedCard } from '../components/cards/AdvancedCard';
-import { Switch } from '../components/switch/Switch';
-import ChangePassword from './ChangePassword';
 
 function DeleteAccount() {
   const [emailValue, setEmailValue] = useState('');

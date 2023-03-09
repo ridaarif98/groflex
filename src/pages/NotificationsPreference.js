@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Input } from '../components/input/Input';
 import { Button } from '../components/button/Button';
-import { TextArea } from '../components/textarea/TextArea';
 import { AdvancedCard } from '../components/cards/AdvancedCard';
 import { Switch } from '../components/switch/Switch';
 
