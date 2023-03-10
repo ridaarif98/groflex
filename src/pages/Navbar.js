@@ -3,6 +3,7 @@ const links = [
   { path: '/', text: 'Home' },
   { path: '/AdminNotifications', text: 'AdminNotifications' },
   { path: '/AccountPreference', text: 'AccountPreference' },
+  { path: '/PriceForm', text: 'PriceForm' },
 ];
 function Navbar() {
   return (
